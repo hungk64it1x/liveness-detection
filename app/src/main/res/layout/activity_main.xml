@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_main"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="361dp"
+        android:layout_height="76dp"
+        android:gravity="center"
+        android:text="@string/face_identify_title"
+        android:textColor="#CABBA4"
+        android:textSize="34dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.316" />
+
+    <TextView
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:text="@string/liveness_description"
+        android:textColor="#CABBA4"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <ImageButton
+        android:id="@+id/Indentify"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:text="@string/identify_now"
+        android:textAllCaps="false"
+        android:textSize="16dp"
+        android:background="@drawable/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
+        app:layout_constraintVertical_bias="0.137" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="115dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="72dp"
+        android:text="@string/policy"
+        android:gravity="center_vertical"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="#CABBA4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Indentify" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Xác thực ngay       "
+        android:textColor="#F3F3F3"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/Indentify"
+        app:layout_constraintEnd_toEndOf="@+id/Indentify"
+        app:layout_constraintStart_toStartOf="@+id/Indentify"
+        app:layout_constraintTop_toTopOf="@+id/Indentify" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="#F3F3F3"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="283dp"
+        tools:layout_editor_absoluteY="789dp" />
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:background="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:background="@drawable/logo_vndc"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396" />
+
+    <Button
+        android:id="@+id/btShowGuideline"
+        android:background="@drawable/button"
+        android:textAllCaps="false"
+        android:textSize="15dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_width="206dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="64dp"
+        android:text="Xem hướng dẫn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.878"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

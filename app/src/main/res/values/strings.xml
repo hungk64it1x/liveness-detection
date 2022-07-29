@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Liveness detection</string>
+    <string name="camerax">CameraX</string>
+    <string name="cam_analyze">Camera With Analyzer</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="mlkit">ML Kit | Face Detection</string>
+    <string name="realtime_face_detection">Real Time Face Detection</string>
+    <string name="capture_face_detection">Capturing &amp; Face Detection</string>
+    <string name="face_tracking">Face Detection and Tracking</string>
+    <string name="mlkit_object">ML Kit | Object Detection</string>
+    <string name="realtime_object_detection">Real Time Object Detection</string>
+    <string name="custom_model">Custom Model</string>
+    <string name="object_detection_local">Object Detection | Local</string>
+    <string name="image_classification_local">Image Classification | Local</string>
+    <string name="object_detection_local_video">Object Detection Video | Local</string>
+    <string name="face_identify">Xác thực khuôn mặt</string>
+    <string name="face_make_sure">Đảm bảo khuôn mặt của bạn vừa khung hình</string>
+    <string name="txt_continue">Tiếp tục</string>
+    <string name="identify_now">Xác thực ngay</string>
+    <string name="policy">Điều khoản</string>
+    <string name="face_identify_title">Xác thực khuôn mặt</string>
+    <string name="liveness_description">Làm theo các thử thách hiện trên màn hình để xác thực khuôn mặt của bạn</string>
+    <string name="title_activity_guideline">GuidelineActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

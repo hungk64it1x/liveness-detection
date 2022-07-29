@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_main"
+    tools:context=".EndActivity">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/firework">
+
+    </pl.droidsonroids.gif.GifImageView>
+
+    <TextView
+        android:id="@+id/tvCongrat"
+        android:layout_width="339dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="200dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Congratulation!"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
