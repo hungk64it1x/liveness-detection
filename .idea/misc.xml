@@ -10,6 +10,8 @@
         <entry key="..\:/Android_Project/face_camerax_mlkit-main/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Android_Project/face_camerax_mlkit-main/app/src/main/res/layout/activity_main2.xml" value="0.37343358395989973" />
         <entry key="..\:/Android_Project/face_camerax_mlkit-main/app/src/main/res/layout/activity_real_time_face_detection.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.31302083333333336" />
+        <entry key="app/src/main/res/layout/activity_real_time_face_detection.xml" value="0.31302083333333336" />
       </map>
     </option>
   </component>

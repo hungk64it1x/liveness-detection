@@ -1,0 +1,167 @@
+<resources>
+  <dimen name="fab_margin">
+    16dp
+  </dimen>
+  <dimen name="size_2dp">
+    2dp
+  </dimen>
+  <dimen name="size_6dp">
+    6dp
+  </dimen>
+  <dimen name="size_20sp">
+    20sp
+  </dimen>
+  <dimen name="size_48dp">
+    48dp
+  </dimen>
+  <dimen name="size_32dp">
+    32dp
+  </dimen>
+  <dimen name="size_16sp">
+    16sp
+  </dimen>
+  <dimen name="size_16dp">
+    16dp
+  </dimen>
+  <dimen name="size_12dp">
+    12dp
+  </dimen>
+  <dimen name="size_8dp">
+    8dp
+  </dimen>
+  <dimen name="size_24dp">
+    24dp
+  </dimen>
+  <dimen name="size_14sp">
+    14sp
+  </dimen>
+  <dimen name="size_40dp">
+    40dp
+  </dimen>
+  <dimen name="size_146dp">
+    146dp
+  </dimen>
+  <dimen name="lottie_animation_size">
+    112dp
+  </dimen>
+  <dimen name="size_25dp">
+    25dp
+  </dimen>
+  <dimen name="size_20dp">
+    20dp
+  </dimen>
+  <dimen name="size_50dp">
+    50dp
+  </dimen>
+  <dimen name="size_140dp">
+    140dp
+  </dimen>
+  <dimen name="size_11sp">
+    11sp
+  </dimen>
+  <dimen name="size_24sp">
+    24sp
+  </dimen>
+  <dimen name="size_48sp">
+    48sp
+  </dimen>
+  <dimen name="size_6sp">
+    6sp
+  </dimen>
+  <dimen name="size_28dp">
+    28dp
+  </dimen>
+  <dimen name="size_36sp">
+    36sp
+  </dimen>
+  <dimen name="size_32sp">
+    32sp
+  </dimen>
+  <dimen name="size_38dp">
+    38dp
+  </dimen>
+  <dimen name="size_4sp">
+    4sp
+  </dimen>
+  <dimen name="size_4dp">
+    4dp
+  </dimen>
+  <dimen name="size_30dp">
+    30dp
+  </dimen>
+  <dimen name="size_18sp">
+    18sp
+  </dimen>
+  <dimen name="size_12sp">
+    12sp
+  </dimen>
+  <dimen name="size_100dp">
+    100dp
+  </dimen>
+  <dimen name="size_60dp">
+    60dp
+  </dimen>
+  <dimen name="selfie_border_margin_horizontal">
+    48dp
+  </dimen>
+  <dimen name="selfie_border_margin_vertical">
+    100dp
+  </dimen>
+  <dimen name="id_card_border_margin_horizontal">
+    40dp
+  </dimen>
+  <dimen name="id_card_border_margin_vertical">
+    40dp
+  </dimen>
+  <dimen name="size_80dp">
+    80dp
+  </dimen>
+  <dimen name="size_65dp">
+    65dp
+  </dimen>
+  <dimen name="size_8sp">
+    8sp
+  </dimen>
+  <dimen name="size_256dp">
+    256dp
+  </dimen>
+  <dimen name="size_10dp">
+    10dp
+  </dimen>
+  <dimen name="size_10sp">
+    10sp
+  </dimen>
+  <dimen name="size_64dp">
+    64dp
+  </dimen>
+  <dimen name="size_70sp">
+    70sp
+  </dimen>
+  <dimen name="camera_overlay_padding_horizontal">
+    28dp
+  </dimen>
+  <dimen name="camera_overlay_padding_top">
+    24dp
+  </dimen>
+  <dimen name="camera_overlay_padding_horizontal_small">
+    18dp
+  </dimen>
+  <dimen name="camera_overlay_padding_top_small">
+    16dp
+  </dimen>
+  <dimen name="size_192dp">
+    192dp
+  </dimen>
+  <dimen name="size_36dp">
+    36dp
+  </dimen>
+  <dimen name="size_72dp">
+    72dp
+  </dimen>
+  <dimen name="size_200dp">
+    200dp
+  </dimen>
+  <dimen name="size_26sp">
+    26sp
+  </dimen>
+</resources>

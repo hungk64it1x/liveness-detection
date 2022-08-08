@@ -1,0 +1,167 @@
+<resources>
+  <dimen name="fab_margin">
+    21.33dp
+  </dimen>
+  <dimen name="size_2dp">
+    2.67dp
+  </dimen>
+  <dimen name="size_6dp">
+    8.0dp
+  </dimen>
+  <dimen name="size_20sp">
+    26.67sp
+  </dimen>
+  <dimen name="size_48dp">
+    64.0dp
+  </dimen>
+  <dimen name="size_32dp">
+    42.67dp
+  </dimen>
+  <dimen name="size_16sp">
+    21.33sp
+  </dimen>
+  <dimen name="size_16dp">
+    21.33dp
+  </dimen>
+  <dimen name="size_12dp">
+    16.0dp
+  </dimen>
+  <dimen name="size_8dp">
+    10.67dp
+  </dimen>
+  <dimen name="size_24dp">
+    32.0dp
+  </dimen>
+  <dimen name="size_14sp">
+    18.67sp
+  </dimen>
+  <dimen name="size_40dp">
+    53.33dp
+  </dimen>
+  <dimen name="size_146dp">
+    194.67dp
+  </dimen>
+  <dimen name="lottie_animation_size">
+    149.33dp
+  </dimen>
+  <dimen name="size_25dp">
+    33.33dp
+  </dimen>
+  <dimen name="size_20dp">
+    26.67dp
+  </dimen>
+  <dimen name="size_50dp">
+    66.67dp
+  </dimen>
+  <dimen name="size_140dp">
+    186.67dp
+  </dimen>
+  <dimen name="size_11sp">
+    14.67sp
+  </dimen>
+  <dimen name="size_24sp">
+    32.0sp
+  </dimen>
+  <dimen name="size_48sp">
+    64.0sp
+  </dimen>
+  <dimen name="size_6sp">
+    8.0sp
+  </dimen>
+  <dimen name="size_28dp">
+    37.33dp
+  </dimen>
+  <dimen name="size_36sp">
+    48.0sp
+  </dimen>
+  <dimen name="size_32sp">
+    42.67sp
+  </dimen>
+  <dimen name="size_38dp">
+    50.67dp
+  </dimen>
+  <dimen name="size_4sp">
+    5.33sp
+  </dimen>
+  <dimen name="size_4dp">
+    5.33dp
+  </dimen>
+  <dimen name="size_30dp">
+    40.0dp
+  </dimen>
+  <dimen name="size_18sp">
+    24.0sp
+  </dimen>
+  <dimen name="size_12sp">
+    16.0sp
+  </dimen>
+  <dimen name="size_100dp">
+    133.33dp
+  </dimen>
+  <dimen name="size_60dp">
+    80.0dp
+  </dimen>
+  <dimen name="selfie_border_margin_horizontal">
+    64.0dp
+  </dimen>
+  <dimen name="selfie_border_margin_vertical">
+    133.33dp
+  </dimen>
+  <dimen name="id_card_border_margin_horizontal">
+    53.33dp
+  </dimen>
+  <dimen name="id_card_border_margin_vertical">
+    53.33dp
+  </dimen>
+  <dimen name="size_80dp">
+    106.67dp
+  </dimen>
+  <dimen name="size_65dp">
+    86.67dp
+  </dimen>
+  <dimen name="size_8sp">
+    10.67sp
+  </dimen>
+  <dimen name="size_256dp">
+    341.33dp
+  </dimen>
+  <dimen name="size_10dp">
+    13.33dp
+  </dimen>
+  <dimen name="size_10sp">
+    13.33sp
+  </dimen>
+  <dimen name="size_64dp">
+    85.33dp
+  </dimen>
+  <dimen name="size_70sp">
+    93.33sp
+  </dimen>
+  <dimen name="camera_overlay_padding_horizontal">
+    37.33dp
+  </dimen>
+  <dimen name="camera_overlay_padding_top">
+    32.0dp
+  </dimen>
+  <dimen name="camera_overlay_padding_horizontal_small">
+    24.0dp
+  </dimen>
+  <dimen name="camera_overlay_padding_top_small">
+    21.33dp
+  </dimen>
+  <dimen name="size_192dp">
+    256.0dp
+  </dimen>
+  <dimen name="size_36dp">
+    48.0dp
+  </dimen>
+  <dimen name="size_72dp">
+    96.0dp
+  </dimen>
+  <dimen name="size_200dp">
+    266.67dp
+  </dimen>
+  <dimen name="size_26sp">
+    34.67sp
+  </dimen>
+</resources>
