@@ -85,7 +85,9 @@ public class MLKitFacesAnalyzer implements ImageAnalysis.Analyzer {
 
     }
 
-
+    /*
+    Khởi tạo bản vẽ trên bitmap
+     */
     private void initDrawingUtils(InputImage image) {
         bitmap = Bitmap.createBitmap(previewView.getWidth(), previewView.getHeight(), Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
@@ -100,7 +102,9 @@ public class MLKitFacesAnalyzer implements ImageAnalysis.Analyzer {
         linePaint.setStrokeWidth(2f);
 
     }
-
+    /*
+    Khởi tạo detector trong mlkit
+     */
     private void initDetector() {
         FaceDetectorOptions detectorOptions = new FaceDetectorOptions
                 .Builder()
@@ -113,7 +117,9 @@ public class MLKitFacesAnalyzer implements ImageAnalysis.Analyzer {
         faceDetector = FaceDetection.getClient(detectorOptions);
 
     }
-
+    /*
+    Hàm thực hiện realtime action
+     */
     private void detectFaces(InputImage fbImage, ImageProxy imageProxy, List<Integer> chs) {
 
         faceDetector
@@ -141,7 +147,9 @@ public class MLKitFacesAnalyzer implements ImageAnalysis.Analyzer {
                             }
                         });
     }
-
+    /*
+    Thực hiện xử lý các tác vụ chính
+     */
     public int ProcessFaces(List<Face> faces, List<Integer> chs) {
         LivenessProcess livenessProcess = new LivenessProcess();
         for (Face face: faces){

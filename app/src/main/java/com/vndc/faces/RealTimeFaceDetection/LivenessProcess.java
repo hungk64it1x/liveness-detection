@@ -10,13 +10,17 @@ import java.util.List;
 
 
 public class LivenessProcess {
-    public final double MOUTH_AR_THRESH = 0.5;
-    public final double BLINK_THRESH = 0.4;
-    public final double TURN_RIGHT_THRESH = -15;
-    public final double TURN_LEFT_THRESH = 15;
-    public final double SMILE_THRESH = 0.4;
+    public final double MOUTH_AR_THRESH = 0.5; // Tham số kiểm tra xem miệng có đang mở không
+    public final double BLINK_THRESH = 0.4; // Tham số kiểm tra xem mắt có nháy hay không
+    public final double TURN_RIGHT_THRESH = -15; // Tham số kiểm tra xem ngưỡng có vượt quá để gọi là quay sang phải
+    public final double TURN_LEFT_THRESH = 15; // Tham số kiểm tra xem ngưỡng có vượt quá để gọi là quay sang trái
+    public final double SMILE_THRESH = 0.4; // Tham số kiểm tra xem người dùng có đang cười hay không
 
-
+    /*
+    Hàm tính khoảng cách giữa 2 điểm
+    Params: (x1,y1), (x2,y2)
+    Return: Khoảng cách theo euclide
+     */
     public static double calculateDistanceBetweenPoints(
             double x1,
             double y1,
@@ -25,6 +29,11 @@ public class LivenessProcess {
         return Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
     }
 
+    /*
+    Hàm kiểm tra xem miệng có đang mở hay không
+    Params: Face face, List<Float> increaseMouthOpen: danh sách điểm tăng trong các point ở miệng
+    Return: 1 nếu đúng 0 nếu sai
+     */
     public int isMouthOpen(Face face, List<Float> increaseMouthOpen) {
         if(face != null){
             List<PointF> lowerLipBottom = face.getContour(FaceContour.LOWER_LIP_TOP).getPoints();
@@ -59,7 +68,11 @@ public class LivenessProcess {
         return 0;
 
     }
-
+    /*
+    Hàm kiểm tra xem mắt có nháy hay không
+    Params: Face face
+    Return: 1 nếu đúng 0 nêu sai
+     */
     public int isEyeBlink(Face face){
         if(face != null){
             int count = 0;
@@ -72,6 +85,11 @@ public class LivenessProcess {
         return 0;
     }
 
+    /*
+    Hàm kiểm tra xem có đang quay sang trái hay không
+    Params: Face face, List<Float> increaseLeft (danh sách tăng dần của trục ngang nếu quay sang trái thì tọa độ ngang tăng dần)
+    Return: 1 nếu đúng 0 nếu sai
+     */
     public int isTurnLeft(Face face, List<Float> increaseLeft){
         if(face != null){
             increaseLeft.add(face.getHeadEulerAngleY());
@@ -83,7 +101,11 @@ public class LivenessProcess {
         }
         return 0;
     }
-
+    /*
+    Hàm kiểm tra xem có đang quay sang phải hay không
+    Params: Face face, List<Float> decreaseRight (danh sách giảm dần của trục ngang nếu quay sang phải thì tọa độ ngang giảm dần)
+    Return: 1 nếu đúng 0 nếu sai
+     */
     public int isTurnRight(Face face, List<Float> decreaseRight){
         if(face != null){
             decreaseRight.add(face.getHeadEulerAngleY());
@@ -95,7 +117,11 @@ public class LivenessProcess {
         }
         return 0;
     }
-
+    /*
+    Hàm kiểm tra xem có đang cười hay không
+    Params: Face face
+    Return: 1 nếu đúng 0 nếu sai
+     */
     public int isSmile(Face face){
         if(face != null) {
             if (face.getSmilingProbability() > SMILE_THRESH) {

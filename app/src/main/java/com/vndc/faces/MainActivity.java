@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    // Hàm chuyển đổi activity
     private void switchActivity(Class c) {
         Intent intent = new Intent(this, c);
         this.startActivity(intent);

@@ -35,6 +35,10 @@ public class FaceAlgorithm {
         this.increaseOpenMouth = increaseOpenMouth;
     }
 
+    /*
+    Hàm này kiểm tra xem list mà mình kiểm tra ngưỡng của các action nếu dài hơn i sẽ cắt bớt các phần tử trong quá khứ
+     */
+
     public boolean CheckExceedList(){
 
         if(this.increaseTurnLeft.size() > numOfListIfExceed ||
@@ -45,6 +49,9 @@ public class FaceAlgorithm {
         }
     return false;
     }
+    /*
+    Hàm loại bỏ các phần tử trong quá khứ
+     */
 
     public void IncreaseValue(){
             int size1 = increaseTurnLeft.size();
@@ -55,7 +62,9 @@ public class FaceAlgorithm {
             if(size3 > numOfListIfExceed) this.increaseOpenMouth = increaseOpenMouth.subList(size3 - numOfListIfExceed, size3);
 
     }
-
+    /*
+    Hàm kiểm tra xem 1 dãy có phải là dãy tăng dần không
+     */
     public static boolean CheckIncrease(List<Float> list){
         for(int i = 1; i < numOfListIfExceed + 1; i ++){
             if(i == numOfListIfExceed) break;
@@ -63,6 +72,9 @@ public class FaceAlgorithm {
         }
         return true;
     }
+    /*
+    Hàm kiểm tra xem 1 dãy có phải là dãy giảm dần không
+     */
 
     public static boolean CheckDecrease(List<Float> list){
         for(int i = 1; i < numOfListIfExceed + 1; i ++){
@@ -71,7 +83,9 @@ public class FaceAlgorithm {
         }
         return true;
     }
-
+    /*
+    init
+     */
      public FaceAlgorithm(){
          increaseTurnLeft = new ArrayList<Float>();
          decreaseTurnRight = new ArrayList<Float>();

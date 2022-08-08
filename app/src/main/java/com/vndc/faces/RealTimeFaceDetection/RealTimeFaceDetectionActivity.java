@@ -30,6 +30,9 @@ import java.io.File;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 
+/*
+Class xử lý về cameraX
+ */
 public class RealTimeFaceDetectionActivity extends AppCompatActivity{
 
     Button btnTakePicture;

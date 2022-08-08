@@ -19,6 +19,14 @@ public class LivenessChallenge {
     public static final String TURN_LEFT = "Hãy quay đầu sang trái";
     public static final String TURN_RIGHT = "Hãy quay đầu sang phải";
     public static final String BLINK_EYE = "Hãy nháy mắt";
+    private static final double IOU_THRES = 0.35;
+    private static final int OPEN_MOUTH_INDEX = 0;
+    private static final int SMILE_INDEX = 1;
+    private static final int TURN_LEFT_INDEX = 2;
+    private static final int TURN_RIGHT_INDEX = 3;
+    private static final int BLINK_INDEX = 4;
+
+    //Khởi tạo danh sách các challengs
     public static final List<String> challenge_list = Arrays.asList(new String[]{OPEN_MOUTH, SMILE, TURN_LEFT, TURN_RIGHT, BLINK_EYE});
     private static int TOP_LEFT_RATIO = 15;
     private static int TOP_RIGHT_RETIO = 6;
@@ -26,6 +34,7 @@ public class LivenessChallenge {
     private static int BOTTOM_RIGHT_RATIO = 450;
     private static int AREA_RATIO = 45000;
 
+    // Khởi tạo hình chữ nhật
     private static Rect InitRect(View view){
         int view_top_left = 0;
         int view_top_right = 0;
@@ -37,7 +46,9 @@ public class LivenessChallenge {
         int rect_bottom_right = rect_top_right + BOTTOM_RIGHT_RATIO;
         return new Rect(rect_top_left, rect_top_right, rect_bottom_left, rect_bottom_right);
     }
-
+    /*
+    Hàm kiểm tra xem diện tích bbox bao quanh khuôn mặt có thỏa mãn một lớn hơn một ngưỡng không
+     */
     private static boolean CheckArea(Face face){
         Rect box = new Rect(face.getBoundingBox().left,
                 face.getBoundingBox().top,
@@ -48,7 +59,11 @@ public class LivenessChallenge {
 
         return false;
     }
-
+    /*
+    Hàm kiểm tra khuôn mặt có nằm trong hình chứ nhật
+    Params: Face face, View view
+    Return: true nếu đúng false nếu sai
+     */
     private static boolean CheckFaceInRect(Face face, View view){
 //        Rect anchorRect = new Rect(40, 100, 500, 500);
         Rect anchorRect = InitRect(view);
@@ -61,7 +76,9 @@ public class LivenessChallenge {
         }
         return false;
     }
-
+    /*
+    Hàm kiểm tra xem khuôn mặt có phù hợp để bắt đầu hay không (kết hợp các điều kiện)
+     */
     public static boolean CheckFaceInCircle(Face face, View view) {
         Rect anchorRect = InitRect(view);
 //        Rect anchorRect = new Rect(40, 100, 500, 500);
@@ -78,32 +95,35 @@ public class LivenessChallenge {
 //        Log.v("IOU", String.valueOf(FaceUtils.IOU(anchorRect, box)));
         if(CheckFaceInRect(face, view)){
             if(CheckArea(face)){
-                if(FaceUtils.IOU(anchorRect, box) > 0.35) return true;
+                if(FaceUtils.IOU(anchorRect, box) > IOU_THRES) return true;
             }
 
         }
 
         return false;
     }
+    /*
+    Hàm kiểu tra kết quả của các challenges
+     */
 
     public static int CheckChallengeResult(int k, LivenessProcess livenessProcess, Face face, FaceAlgorithm faceAlgorithm){
-        if(k == 0){
+        if(k == OPEN_MOUTH_INDEX){
             int res = livenessProcess.isMouthOpen(face, faceAlgorithm.getIncreaseOpenMouth());
             return res;
         }
-        if(k == 1){
+        if(k == SMILE_INDEX){
             int res = livenessProcess.isSmile(face);
             return res;
         }
-        if(k == 2){
+        if(k == TURN_LEFT_INDEX){
             int res = livenessProcess.isTurnLeft(face, faceAlgorithm.getIncreaseTurnLeft());
             return res;
         }
-        if(k == 3){
+        if(k == TURN_RIGHT_INDEX){
             int res = livenessProcess.isTurnRight(face, faceAlgorithm.getDecreaseTurnRight());
             return res;
         }
-        if(k == 4){
+        if(k == BLINK_INDEX){
             int res = livenessProcess.isEyeBlink(face);
             return res;
         }
