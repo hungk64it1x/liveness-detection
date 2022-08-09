@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_main"
+    tools:context=".ShowCaptureActivity">
+
+
+    <TextView
+        android:id="@+id/txtIdentifyResult"
+        android:layout_width="386dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="28dp"
+        android:text="Kết quả xác thực"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/colorTitle"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgCapture"
+        android:layout_width="376dp"
+        android:layout_height="345dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIdentifyResult">
+
+    </ImageView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="378dp"
+        android:layout_height="263dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/txtViewResult"
+            android:layout_width="342dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="48dp"
+            android:text="Xác thực thành công:"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTitle"
+            android:textSize="@dimen/size_20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtViewComment"
+            android:layout_width="344dp"
+            android:layout_height="113dp"
+            android:layout_marginBottom="60dp"
+            android:text="Khuôn mặt chụp rõ ràng, khớp với ảnh chụp trong căn cước công dân"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTitle"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

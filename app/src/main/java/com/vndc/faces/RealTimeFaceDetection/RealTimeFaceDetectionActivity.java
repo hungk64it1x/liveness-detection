@@ -39,6 +39,7 @@ public class RealTimeFaceDetectionActivity extends AppCompatActivity{
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
     private PreviewView previewView;
     private Button btGuide;
+    private Button btContinue;
     private static final int CAMERA_REQUEST_CODE = 10;
     private static final int AUDIO_REQUEST_CODE = 10;
     private int LENS_SELECTOR = CameraSelector.LENS_FACING_FRONT;
@@ -104,6 +105,7 @@ public class RealTimeFaceDetectionActivity extends AppCompatActivity{
         setContentView(R.layout.activity_real_time_face_detection);
         previewView = findViewById(R.id.preview);
         btGuide = findViewById(R.id.btGuide);
+        btContinue = findViewById(R.id.btContinue);
         mainView = findViewById(R.id.mainView);
         txtDone = findViewById(R.id.txtDone);
         progressBar = findViewById(R.id.progressbar);
@@ -151,17 +153,24 @@ public class RealTimeFaceDetectionActivity extends AppCompatActivity{
                 .setTargetAspectRatio(AspectRatio.RATIO_4_3)
                 .build();
         preview.setSurfaceProvider(previewView.getSurfaceProvider());
+        ImageCapture.Builder builder = new ImageCapture.Builder();
 
-        imageCapture = new ImageCapture.Builder()
+        ImageCapture imageCapture = builder
+                .setTargetRotation(this.getWindowManager().getDefaultDisplay().getRotation())
                 .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
                 .build();
+//        imageCapture = new ImageCapture.Builder()
+//                .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
+//                .build();
         imageAnalysis = new ImageAnalysis.Builder()
+
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build();
 
-        imageAnalysis.setAnalyzer(Runnable::run, new MLKitFacesAnalyzer(previewView, btGuide, txtDone, progressBar, mainView));
+        imageAnalysis.setAnalyzer(Runnable::run, new MLKitFacesAnalyzer(previewView, btGuide, btContinue, txtDone, progressBar, mainView));
         cameraProvider.unbindAll();
         cameraProvider.bindToLifecycle((LifecycleOwner) this, cameraSelector, preview, imageCapture, imageAnalysis);
+
     }
 
 }

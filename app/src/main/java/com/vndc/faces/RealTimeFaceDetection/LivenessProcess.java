@@ -11,9 +11,9 @@ import java.util.List;
 
 public class LivenessProcess {
     public final double MOUTH_AR_THRESH = 0.5; // Tham số kiểm tra xem miệng có đang mở không
-    public final double BLINK_THRESH = 0.4; // Tham số kiểm tra xem mắt có nháy hay không
-    public final double TURN_RIGHT_THRESH = -15; // Tham số kiểm tra xem ngưỡng có vượt quá để gọi là quay sang phải
-    public final double TURN_LEFT_THRESH = 15; // Tham số kiểm tra xem ngưỡng có vượt quá để gọi là quay sang trái
+    public final double BLINK_THRESH = 0.5; // Tham số kiểm tra xem mắt có nháy hay không
+    public final double TURN_RIGHT_THRESH = -14; // Tham số kiểm tra xem ngưỡng có vượt quá để gọi là quay sang phải
+    public final double TURN_LEFT_THRESH = 14; // Tham số kiểm tra xem ngưỡng có vượt quá để gọi là quay sang trái
     public final double SMILE_THRESH = 0.4; // Tham số kiểm tra xem người dùng có đang cười hay không
 
     /*
@@ -36,9 +36,10 @@ public class LivenessProcess {
      */
     public int isMouthOpen(Face face, List<Float> increaseMouthOpen) {
         if(face != null){
-            List<PointF> lowerLipBottom = face.getContour(FaceContour.LOWER_LIP_TOP).getPoints();
-            List<PointF> upperLipBottom = face.getContour(FaceContour.UPPER_LIP_BOTTOM).getPoints();
+
             try{
+                List<PointF> lowerLipBottom = face.getContour(FaceContour.LOWER_LIP_TOP).getPoints();
+                List<PointF> upperLipBottom = face.getContour(FaceContour.UPPER_LIP_BOTTOM).getPoints();
                 PointF pt1 = lowerLipBottom.get(0);
                 PointF pt2 = upperLipBottom.get(3);
 
@@ -76,9 +77,14 @@ public class LivenessProcess {
     public int isEyeBlink(Face face){
         if(face != null){
             int count = 0;
-            if(face.getLeftEyeOpenProbability() < BLINK_THRESH || face.getRightEyeOpenProbability() < BLINK_THRESH){
-                count += 1;
+            try{
+                if((face.getLeftEyeOpenProbability() < BLINK_THRESH || face.getRightEyeOpenProbability() < BLINK_THRESH) && isFaceStraight(face) == 1){
+                    count += 1;
+                }
+            }catch (Exception e){
+                count = 0;
             }
+
             if(count == 1) return 1;
             return 0;
         }
@@ -124,10 +130,49 @@ public class LivenessProcess {
      */
     public int isSmile(Face face){
         if(face != null) {
-            if (face.getSmilingProbability() > SMILE_THRESH) {
+            try{
+                if (face.getSmilingProbability() > SMILE_THRESH) {
+                    return 1;
+                }
+            }
+            catch (Exception e){
+                return 0;
+            }
+
+        }
+        return 0;
+    }
+
+    public int isKeepFaceStraight(Face face){
+        if(face != null){
+            try{
+                if (face.getSmilingProbability() < 0.4) {
+                    double yaw = face.getHeadEulerAngleZ();
+                    double pitch = face.getHeadEulerAngleY();
+                    double roll = face.getHeadEulerAngleX();
+                    if(yaw >= -3 && yaw <= 2 &&  pitch >= -1.8 && pitch <= 1.8 && roll >= -1.8 && roll <= 1.8
+                            && face.getLeftEyeOpenProbability() > 0.6
+                            && face.getRightEyeOpenProbability() > 0.6){
+                        return 1;
+                    }
+                }
+            }
+            catch (Exception e){
+                return 0;
+            }
+
+        }
+        return 0;
+    }
+
+    private int isFaceStraight(Face face){
+        if(face != null){
+            double yaw = face.getHeadEulerAngleZ();
+            double pitch = face.getHeadEulerAngleY();
+            double roll = face.getHeadEulerAngleX();
+            if(yaw >= -2.5 && yaw <= 2.5 &&  pitch >= -2.5 && pitch <= 2.5 && roll >= -2.5 && roll <= 2.5) {
                 return 1;
             }
-            return 0;
         }
         return 0;
     }

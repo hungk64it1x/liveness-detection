@@ -66,6 +66,7 @@ public class FaceAlgorithm {
     Hàm kiểm tra xem 1 dãy có phải là dãy tăng dần không
      */
     public static boolean CheckIncrease(List<Float> list){
+        if(list.size() == 1 || list.size() == 2) return false;
         for(int i = 1; i < numOfListIfExceed + 1; i ++){
             if(i == numOfListIfExceed) break;
             if(list.get(i) < list.get(i - 1)) return false;
@@ -77,6 +78,7 @@ public class FaceAlgorithm {
      */
 
     public static boolean CheckDecrease(List<Float> list){
+        if(list.size() == 1 || list.size() == 2) return false;
         for(int i = 1; i < numOfListIfExceed + 1; i ++){
             if(i == numOfListIfExceed) break;
             if(list.get(i) > list.get(i - 1)) return false;
